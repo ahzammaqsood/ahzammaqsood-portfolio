@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karachi Delights Restaurant - Ahzam Maqsood</title>
+    <meta name="description" content="Complete restaurant website with online ordering system and reservation management">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/sections.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="../../index.html" class="logo">ahzammaqsood</a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="../../assets/Ahzam-Maqsood-CV.pdf" class="btn btn-outline hidden-mobile" download>Download CV</a>
+                <a href="../contact.html" class="btn btn-primary hire-btn">Hire Me</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-menu">
+            <li class="mobile-nav-item"><a href="../../index.html" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="../about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="../services.html" class="mobile-nav-link">Services</a></li>
+            <li class="mobile-nav-item"><a href="../portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+            <li class="mobile-nav-item"><a href="../projects.html" class="mobile-nav-link">Projects</a></li>
+            <li class="mobile-nav-item"><a href="../contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        
+        <div class="mobile-nav-actions">
+            <a href="../../assets/Ahzam-Maqsood-CV.pdf" class="btn btn-outline" download>Download CV</a>
+            <a href="../contact.html" class="btn btn-primary">Hire Me</a>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="../portfolio.html">Portfolio</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Karachi Delights Restaurant</span>
+            </div>
+            <h1 class="project-title fade-in">Karachi Delights Restaurant</h1>
+            <p class="project-subtitle fade-in">Complete restaurant website with online ordering system and reservation management</p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Completed: December 2024</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-code"></i>
+                    <span>WordPress, WooCommerce, PHP</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Restaurant & Food</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Demo Section -->
+    <section class="restaurant-showcase">
+        <div class="container">
+            <div class="restaurant-container">
+                <div class="restaurant-info">
+                    <h2>Project Overview</h2>
+                    <p>Karachi Delights is a comprehensive restaurant website featuring online ordering, table reservations, menu management, and customer reviews. The site increased online orders by 180% and improved customer satisfaction to 95%.</p>
+                    
+                    <div class="project-features">
+                        <div class="feature-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Online Ordering System</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Table Reservation</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile Responsive</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-star"></i>
+                            <span>Customer Reviews</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-label">Sales Increase:</span>
+                            <span class="stat-value">180%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Customer Satisfaction:</span>
+                            <span class="stat-value">95%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="restaurant-demo">
+                    <div class="demo-browser">
+                        <div class="browser-header">
+                            <div class="browser-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="browser-url">karachidelights.com</div>
+                        </div>
+                        <div class="browser-content">
+                            <div class="restaurant-website">
+                                <!-- Restaurant Header -->
+                                <div class="restaurant-header">
+                                    <div class="restaurant-nav">
+                                        <div class="restaurant-logo">Karachi Delights</div>
+                                        <div class="restaurant-menu-nav">
+                                            <span>Home</span>
+                                            <span>Menu</span>
+                                            <span>Reservations</span>
+                                            <span>Contact</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Restaurant Hero -->
+                                <div class="restaurant-hero">
+                                    <div class="hero-content">
+                                        <h1>Authentic Pakistani Cuisine</h1>
+                                        <p>Experience the rich flavors of Karachi</p>
+                                        <div class="hero-buttons">
+                                            <button class="order-btn">Order Online</button>
+                                            <button class="reserve-btn">Reserve Table</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Featured Menu -->
+                                <div class="featured-menu">
+                                    <h2>Featured Dishes</h2>
+                                    <div class="menu-items">
+                                        <div class="menu-item">
+                                            <div class="item-image"></div>
+                                            <div class="item-info">
+                                                <h3>Chicken Karahi</h3>
+                                                <p>Rs. 1,200</p>
+                                            </div>
+                                        </div>
+                                        <div class="menu-item">
+                                            <div class="item-image"></div>
+                                            <div class="item-info">
+                                                <h3>Beef Biryani</h3>
+                                                <p>Rs. 800</p>
+                                            </div>
+                                        </div>
+                                        <div class="menu-item">
+                                            <div class="item-image"></div>
+                                            <div class="item-info">
+                                                <h3>Seekh Kebab</h3>
+                                                <p>Rs. 600</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details" style="background-color: var(--card-bg);">
+        <div class="container">
+            <div class="details-grid">
+                <div class="detail-section">
+                    <h3>Technical Implementation</h3>
+                    <p>Built on WordPress with WooCommerce integration for seamless online ordering. Custom PHP development for reservation system and menu management.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Custom WordPress theme development</li>
+                        <li>WooCommerce integration for online orders</li>
+                        <li>Table reservation system</li>
+                        <li>Menu management dashboard</li>
+                        <li>Customer review system</li>
+                        <li>Mobile-responsive design</li>
+                        <li>Payment gateway integration</li>
+                        <li>Order tracking system</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Results & Impact</h3>
+                    <p>The website transformed Karachi Delights' business operations, significantly increasing online presence and customer engagement.</p>
+                    
+                    <h4>Business Impact:</h4>
+                    <ul>
+                        <li><strong>180% increase</strong> in online orders</li>
+                        <li><strong>95% customer satisfaction</strong> rating</li>
+                        <li><strong>60% reduction</strong> in phone orders</li>
+                        <li><strong>40% increase</strong> in table reservations</li>
+                        <li><strong>25% growth</strong> in monthly revenue</li>
+                        <li><strong>300% improvement</strong> in online visibility</li>
+                    </ul>
+                    
+                    <h4>Technologies Used:</h4>
+                    <ul>
+                        <li><strong>WordPress:</strong> Content management system</li>
+                        <li><strong>WooCommerce:</strong> E-commerce functionality</li>
+                        <li><strong>PHP:</strong> Custom backend development</li>
+                        <li><strong>MySQL:</strong> Database management</li>
+                        <li><strong>JavaScript:</strong> Interactive features</li>
+                        <li><strong>CSS3:</strong> Responsive styling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonial -->
+    <section class="client-testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <div class="testimonial-text">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Ahzam transformed our restaurant business completely. The website is beautiful, functional, and has increased our online orders by 180%. Our customers love the easy ordering system and table reservations. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Ahmed Hassan" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Ahmed Hassan</h4>
+                            <p>Owner, Karachi Delights Restaurant</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Portfolio -->
+    <section class="back-to-portfolio">
+        <div class="container text-center">
+            <h2>Explore More Projects</h2>
+            <p>Check out my other work and see what I can create for you</p>
+            <div class="hero-actions">
+                <a href="../portfolio.html" class="btn btn-primary">View Portfolio</a>
+                <a href="../contact.html" class="btn btn-outline">Hire Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ahzammaqsood</h3>
+                    <p>Turning ideas into digital reality with innovative web solutions and digital marketing strategies that drive results and grow businesses.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/ahzammaqsood1" class="footer-social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ahzammaqsood" class="footer-social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/ahzammaqsood" class="footer-social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ahzam-maqsood-31b97b266/" class="footer-social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../portfolio.html">Portfolio</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">WordPress Development</a></li>
+                        <li><a href="../services.html">Shopify Development</a></li>
+                        <li><a href="../services.html">Digital Marketing</a></li>
+                        <li><a href="../services.html">SEO Optimization</a></li>
+                        <li><a href="../services.html">Graphic Design</a></li>
+                        <li><a href="../services.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe to get updates on new projects and insights.</p>
+                    <div class="footer-newsletter">
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ahzam Maqsood | All Rights Reserved | Designed with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="../../js/main.js"></script>
+    
+    <!-- Additional CSS for Restaurant Project Page -->
+    <style>
+        .project-header {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, #f4d03f 100%);
+            color: white;
+        }
+        
+        .project-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .project-breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        
+        .project-breadcrumb a:hover {
+            opacity: 1;
+        }
+        
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .restaurant-showcase {
+            padding: 80px 0;
+        }
+        
+        .restaurant-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .restaurant-info h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .restaurant-info p {
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        
+        .project-features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--card-bg);
+            border-radius: 8px;
+        }
+        
+        .feature-item i {
+            color: var(--primary);
+            width: 20px;
+        }
+        
+        .project-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .restaurant-demo {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .demo-browser {
+            width: 100%;
+            max-width: 500px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .browser-header {
+            background: #e0e0e0;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .browser-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .browser-buttons span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .btn-close { background: #ff5f57; }
+        .btn-minimize { background: #ffbd2e; }
+        .btn-maximize { background: #28ca42; }
+        
+        .browser-url {
+            background: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #666;
+            flex: 1;
+        }
+        
+        .browser-content {
+            background: white;
+            height: 400px;
+            overflow-y: auto;
+        }
+        
+        .restaurant-website {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .restaurant-header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+        }
+        
+        .restaurant-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .restaurant-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f39c12;
+        }
+        
+        .restaurant-menu-nav {
+            display: flex;
+            gap: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .restaurant-menu-nav span {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .restaurant-menu-nav span:hover {
+            color: #f39c12;
+        }
+        
+        .restaurant-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 15px;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        
+        .hero-content p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .order-btn, .reserve-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+        
+        .order-btn {
+            background: #f39c12;
+            color: white;
+        }
+        
+        .reserve-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        
+        .order-btn:hover, .reserve-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .featured-menu {
+            padding: 30px 15px;
+        }
+        
+        .featured-menu h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.3rem;
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .menu-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        
+        .item-image {
+            width: 60px;
+            height: 60px;
+            background: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+        }
+        
+        .item-info h3 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .item-info p {
+            color: #f39c12;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        .project-details {
+            padding: 80px 0;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .detail-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .detail-section h4 {
+            font-size: 1.2rem;
+            margin: 25px 0 15px;
+            color: var(--primary);
+        }
+        
+        .detail-section p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .detail-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .detail-section li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--background);
+            color: var(--text);
+        }
+        
+        .detail-section li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .client-testimonial {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+        
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            background: var(--background);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            position: relative;
+        }
+        
+        .testimonial-text i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: var(--text);
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info {
+            text-align: left;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .author-info p {
+            margin-bottom: 8px;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            display: flex;
+            gap: 3px;
+        }
+        
+        .rating i {
+            color: #f39c12;
+            font-size: 0.9rem;
+        }
+        
+        .back-to-portfolio {
+            padding: 80px 0;
+        }
+        
+        .back-to-portfolio h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .back-to-portfolio p {
+            margin-bottom: 30px;
+            color: var(--text);
+        }
+        
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .restaurant-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .project-stats {
+                justify-content: center;
+            }
+            
+            .demo-browser {
+                max-width: 100%;
+            }
+            
+            .browser-content {
+                height: 350px;
+            }
+            
+            .menu-items {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .testimonial-author {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-info {
+                text-align: center;
+            }
+        }
+    </style>
+</body>
+</html>
+

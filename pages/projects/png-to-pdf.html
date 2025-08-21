@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG to PDF Converter - Ahzam Maqsood</title>
+    <meta name="description" content="Web-based PNG to PDF converter tool with batch processing capabilities">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/sections.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    
+    <!-- PDF-lib for PDF generation -->
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="../../index.html" class="logo">ahzammaqsood</a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="../../assets/Ahzam-Maqsood-CV.pdf" class="btn btn-outline hidden-mobile" download>Download CV</a>
+                <a href="../contact.html" class="btn btn-primary hire-btn">Hire Me</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-menu">
+            <li class="mobile-nav-item"><a href="../../index.html" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="../about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="../services.html" class="mobile-nav-link">Services</a></li>
+            <li class="mobile-nav-item"><a href="../portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+            <li class="mobile-nav-item"><a href="../projects.html" class="mobile-nav-link">Projects</a></li>
+            <li class="mobile-nav-item"><a href="../contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        
+        <div class="mobile-nav-actions">
+            <a href="../../assets/Ahzam-Maqsood-CV.pdf" class="btn btn-outline" download>Download CV</a>
+            <a href="../contact.html" class="btn btn-primary">Hire Me</a>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="../portfolio.html">Portfolio</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>PNG to PDF Converter</span>
+            </div>
+            <h1 class="project-title fade-in">PNG to PDF Converter</h1>
+            <p class="project-subtitle fade-in">Web-based tool for converting PNG images to PDF format with batch processing</p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Completed: January 2025</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-code"></i>
+                    <span>HTML5, CSS3, JavaScript, PDF-lib</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-tools"></i>
+                    <span>Web Tool</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Converter Tool Section -->
+    <section class="converter-showcase">
+        <div class="container">
+            <div class="converter-container">
+                <div class="converter-info">
+                    <h2>Convert PNG to PDF</h2>
+                    <p>Upload your PNG images and convert them to PDF format instantly. Supports batch processing and maintains image quality.</p>
+                    
+                    <div class="tool-features">
+                        <div class="feature-item">
+                            <i class="fas fa-upload"></i>
+                            <span>Drag & Drop Upload</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-layer-group"></i>
+                            <span>Batch Processing</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Client-Side Processing</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-download"></i>
+                            <span>Instant Download</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conversion-stats">
+                        <div class="stat">
+                            <span class="stat-label">Files Processed:</span>
+                            <span class="stat-value" id="filesProcessed">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Total Size:</span>
+                            <span class="stat-value" id="totalSize">0 MB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="converter-tool">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Drop PNG files here</h3>
+                            <p>or click to browse</p>
+                            <input type="file" id="fileInput" accept=".png" multiple style="display: none;">
+                            <button class="btn btn-primary" id="browseButton">Browse Files</button>
+                        </div>
+                    </div>
+                    
+                    <div class="file-list" id="fileList" style="display: none;">
+                        <h4>Selected Files:</h4>
+                        <div class="files-container" id="filesContainer"></div>
+                        <div class="conversion-actions">
+                            <button class="btn btn-primary" id="convertButton">
+                                <i class="fas fa-file-pdf"></i>
+                                Convert to PDF
+                            </button>
+                            <button class="btn btn-outline" id="clearButton">
+                                <i class="fas fa-trash"></i>
+                                Clear All
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="conversion-progress" id="conversionProgress" style="display: none;">
+                        <h4>Converting...</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p id="progressText">Processing files...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details" style="background-color: var(--card-bg);">
+        <div class="container">
+            <div class="details-grid">
+                <div class="detail-section">
+                    <h3>Project Overview</h3>
+                    <p>This PNG to PDF converter is a client-side web application that allows users to convert PNG images to PDF format without uploading files to any server. It uses the PDF-lib JavaScript library for PDF generation and maintains complete privacy.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Drag and drop file upload</li>
+                        <li>Batch processing multiple files</li>
+                        <li>Client-side conversion (no server upload)</li>
+                        <li>Maintains original image quality</li>
+                        <li>Responsive design for all devices</li>
+                        <li>Real-time progress tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Technical Implementation</h3>
+                    <p>The converter uses modern web technologies to provide a seamless user experience. All processing happens in the browser, ensuring privacy and speed.</p>
+                    
+                    <h4>Technologies Used:</h4>
+                    <ul>
+                        <li><strong>HTML5:</strong> File API and drag-drop support</li>
+                        <li><strong>JavaScript:</strong> File processing and PDF generation</li>
+                        <li><strong>PDF-lib:</strong> PDF creation and manipulation</li>
+                        <li><strong>CSS3:</strong> Modern UI and animations</li>
+                    </ul>
+                    
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>100% client-side processing</li>
+                        <li>No file size limitations</li>
+                        <li>Instant conversion and download</li>
+                        <li>Privacy-focused design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Portfolio -->
+    <section class="back-to-portfolio">
+        <div class="container text-center">
+            <h2>Explore More Projects</h2>
+            <p>Check out my other work and see what I can create for you</p>
+            <div class="hero-actions">
+                <a href="../portfolio.html" class="btn btn-primary">View Portfolio</a>
+                <a href="../contact.html" class="btn btn-outline">Hire Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ahzammaqsood</h3>
+                    <p>Turning ideas into digital reality with innovative web solutions and digital marketing strategies that drive results and grow businesses.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/ahzammaqsood1" class="footer-social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ahzammaqsood" class="footer-social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/ahzammaqsood" class="footer-social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ahzam-maqsood-31b97b266/" class="footer-social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../portfolio.html">Portfolio</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">WordPress Development</a></li>
+                        <li><a href="../services.html">Shopify Development</a></li>
+                        <li><a href="../services.html">Digital Marketing</a></li>
+                        <li><a href="../services.html">SEO Optimization</a></li>
+                        <li><a href="../services.html">Graphic Design</a></li>
+                        <li><a href="../services.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe to get updates on new projects and insights.</p>
+                    <div class="footer-newsletter">
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ahzam Maqsood | All Rights Reserved | Designed with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="../../js/main.js"></script>
+    
+    <!-- PNG to PDF Converter Script -->
+    <script>
+        class PNGToPDFConverter {
+            constructor() {
+                this.selectedFiles = [];
+                this.totalProcessed = 0;
+                this.totalSize = 0;
+                
+                this.init();
+            }
+            
+            init() {
+                this.setupEventListeners();
+                this.updateStats();
+            }
+            
+            setupEventListeners() {
+                const uploadArea = document.getElementById('uploadArea');
+                const fileInput = document.getElementById('fileInput');
+                const browseButton = document.getElementById('browseButton');
+                const convertButton = document.getElementById('convertButton');
+                const clearButton = document.getElementById('clearButton');
+                
+                // Drag and drop events
+                uploadArea.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.add('drag-over');
+                });
+                
+                uploadArea.addEventListener('dragleave', () => {
+                    uploadArea.classList.remove('drag-over');
+                });
+                
+                uploadArea.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.remove('drag-over');
+                    this.handleFiles(e.dataTransfer.files);
+                });
+                
+                // Click events
+                browseButton.addEventListener('click', () => fileInput.click());
+                uploadArea.addEventListener('click', () => fileInput.click());
+                fileInput.addEventListener('change', (e) => this.handleFiles(e.target.files));
+                convertButton.addEventListener('click', () => this.convertToPDF());
+                clearButton.addEventListener('click', () => this.clearFiles());
+            }
+            
+            handleFiles(files) {
+                const pngFiles = Array.from(files).filter(file => file.type === 'image/png');
+                
+                if (pngFiles.length === 0) {
+                    alert('Please select PNG files only.');
+                    return;
+                }
+                
+                this.selectedFiles = [...this.selectedFiles, ...pngFiles];
+                this.displayFiles();
+                this.updateStats();
+            }
+            
+            displayFiles() {
+                const fileList = document.getElementById('fileList');
+                const filesContainer = document.getElementById('filesContainer');
+                
+                if (this.selectedFiles.length === 0) {
+                    fileList.style.display = 'none';
+                    return;
+                }
+                
+                fileList.style.display = 'block';
+                filesContainer.innerHTML = '';
+                
+                this.selectedFiles.forEach((file, index) => {
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'file-item';
+                    fileItem.innerHTML = `
+                        <div class="file-info">
+                            <i class="fas fa-image"></i>
+                            <span class="file-name">${file.name}</span>
+                            <span class="file-size">${this.formatFileSize(file.size)}</span>
+                        </div>
+                        <button class="remove-file" onclick="converter.removeFile(${index})">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    filesContainer.appendChild(fileItem);
+                });
+            }
+            
+            removeFile(index) {
+                this.selectedFiles.splice(index, 1);
+                this.displayFiles();
+                this.updateStats();
+            }
+            
+            clearFiles() {
+                this.selectedFiles = [];
+                this.displayFiles();
+                this.updateStats();
+                document.getElementById('fileInput').value = '';
+            }
+            
+            async convertToPDF() {
+                if (this.selectedFiles.length === 0) {
+                    alert('Please select PNG files first.');
+                    return;
+                }
+                
+                const progressContainer = document.getElementById('conversionProgress');
+                const progressFill = document.getElementById('progressFill');
+                const progressText = document.getElementById('progressText');
+                
+                progressContainer.style.display = 'block';
+                
+                try {
+                    // Create a new PDF document
+                    const pdfDoc = await PDFLib.PDFDocument.create();
+                    
+                    for (let i = 0; i < this.selectedFiles.length; i++) {
+                        const file = this.selectedFiles[i];
+                        const progress = ((i + 1) / this.selectedFiles.length) * 100;
+                        
+                        progressFill.style.width = `${progress}%`;
+                        progressText.textContent = `Processing ${file.name}... (${i + 1}/${this.selectedFiles.length})`;
+                        
+                        // Read file as array buffer
+                        const arrayBuffer = await this.fileToArrayBuffer(file);
+                        
+                        // Embed the PNG image
+                        const pngImage = await pdfDoc.embedPng(arrayBuffer);
+                        
+                        // Get image dimensions
+                        const { width, height } = pngImage;
+                        
+                        // Calculate page size (A4 max with aspect ratio maintained)
+                        const maxWidth = 595; // A4 width in points
+                        const maxHeight = 842; // A4 height in points
+                        
+                        let pageWidth = width;
+                        let pageHeight = height;
+                        
+                        if (width > maxWidth || height > maxHeight) {
+                            const widthRatio = maxWidth / width;
+                            const heightRatio = maxHeight / height;
+                            const ratio = Math.min(widthRatio, heightRatio);
+                            
+                            pageWidth = width * ratio;
+                            pageHeight = height * ratio;
+                        }
+                        
+                        // Add a page
+                        const page = pdfDoc.addPage([pageWidth, pageHeight]);
+                        
+                        // Draw the image
+                        page.drawImage(pngImage, {
+                            x: 0,
+                            y: 0,
+                            width: pageWidth,
+                            height: pageHeight,
+                        });
+                        
+                        // Small delay to show progress
+                        await new Promise(resolve => setTimeout(resolve, 100));
+                    }
+                    
+                    progressText.textContent = 'Generating PDF...';
+                    
+                    // Serialize the PDF
+                    const pdfBytes = await pdfDoc.save();
+                    
+                    // Create download link
+                    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `converted-images-${Date.now()}.pdf`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    // Update stats
+                    this.totalProcessed += this.selectedFiles.length;
+                    this.updateStats();
+                    
+                    // Hide progress and show success
+                    progressContainer.style.display = 'none';
+                    alert('PDF created successfully! Download should start automatically.');
+                    
+                } catch (error) {
+                    console.error('Conversion error:', error);
+                    alert('Error converting files. Please try again.');
+                    progressContainer.style.display = 'none';
+                }
+            }
+            
+            fileToArrayBuffer(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result);
+                    reader.onerror = reject;
+                    reader.readAsArrayBuffer(file);
+                });
+            }
+            
+            formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+            
+            updateStats() {
+                const totalSize = this.selectedFiles.reduce((sum, file) => sum + file.size, 0);
+                this.totalSize = totalSize;
+                
+                document.getElementById('filesProcessed').textContent = this.totalProcessed;
+                document.getElementById('totalSize').textContent = this.formatFileSize(totalSize);
+            }
+        }
+        
+        // Initialize converter when page loads
+        let converter;
+        document.addEventListener('DOMContentLoaded', () => {
+            converter = new PNGToPDFConverter();
+        });
+    </script>
+    
+    <!-- Additional CSS for Converter Page -->
+    <style>
+        .project-header {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, #f4d03f 100%);
+            color: white;
+        }
+        
+        .project-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .project-breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        
+        .project-breadcrumb a:hover {
+            opacity: 1;
+        }
+        
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .converter-showcase {
+            padding: 80px 0;
+        }
+        
+        .converter-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .converter-info h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .converter-info p {
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        
+        .tool-features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--card-bg);
+            border-radius: 8px;
+        }
+        
+        .feature-item i {
+            color: var(--primary);
+            width: 20px;
+        }
+        
+        .conversion-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .converter-tool {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .upload-area {
+            border: 3px dashed var(--primary);
+            border-radius: 15px;
+            padding: 60px 30px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .upload-area:hover,
+        .upload-area.drag-over {
+            border-color: var(--secondary);
+            background: var(--background);
+        }
+        
+        .upload-content i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .upload-content h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .upload-content p {
+            margin-bottom: 20px;
+            color: var(--text);
+            opacity: 0.8;
+        }
+        
+        .file-list {
+            margin-top: 30px;
+        }
+        
+        .file-list h4 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .files-container {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: var(--background);
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .file-info i {
+            color: var(--primary);
+        }
+        
+        .file-name {
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        
+        .file-size {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+        
+        .remove-file {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .remove-file:hover {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .conversion-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .conversion-actions .btn {
+            flex: 1;
+        }
+        
+        .conversion-progress {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .conversion-progress h4 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: var(--background);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #f4d03f);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .project-details {
+            padding: 80px 0;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .detail-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .detail-section h4 {
+            font-size: 1.2rem;
+            margin: 25px 0 15px;
+            color: var(--primary);
+        }
+        
+        .detail-section p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .detail-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .detail-section li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--background);
+            color: var(--text);
+        }
+        
+        .detail-section li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .back-to-portfolio {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+        
+        .back-to-portfolio h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .back-to-portfolio p {
+            margin-bottom: 30px;
+            color: var(--text);
+        }
+        
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .converter-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .conversion-stats {
+                justify-content: center;
+            }
+            
+            .upload-area {
+                padding: 40px 20px;
+            }
+            
+            .upload-content i {
+                font-size: 2rem;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .conversion-actions {
+                flex-direction: column;
+            }
+            
+            .file-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</body>
+</html>
+

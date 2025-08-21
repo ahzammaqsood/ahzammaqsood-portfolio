@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahzam Maqsood | Turning Ideas into Digital Reality</title>
+    <meta name="description" content="Professional portfolio of Ahzam Maqsood - Web Developer, Digital Marketer, and AI Specialist">
+    <meta property="og:title" content="Ahzam Maqsood Portfolio">
+    <meta property="og:description" content="Turning Ideas into Digital Reality">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ahzammaqsood.com">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ahzammaqsood</a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="pages/about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="pages/services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="pages/portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="pages/projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="pages/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="assets/Ahzam-Maqsood-CV.pdf" class="btn btn-outline hidden-mobile" download>Download CV</a>
+                <a href="pages/contact.html" class="btn btn-primary hire-btn">Hire Me</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-menu">
+            <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="pages/about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="pages/services.html" class="mobile-nav-link">Services</a></li>
+            <li class="mobile-nav-item"><a href="pages/portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+            <li class="mobile-nav-item"><a href="pages/projects.html" class="mobile-nav-link">Projects</a></li>
+            <li class="mobile-nav-item"><a href="pages/contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        
+        <div class="mobile-nav-actions">
+            <a href="assets/Ahzam-Maqsood-CV.pdf" class="btn btn-outline" download>Download CV</a>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Ahzam Maqsood</h1>
+            <p class="hero-subtitle">Turning Ideas into Digital Reality</p>
+            <p class="hero-description">
+                Professional Web Developer & Digital Marketing Specialist with expertise in creating 
+                stunning digital experiences that drive results and grow businesses.
+            </p>
+            <div class="hero-actions">
+                <a href="pages/contact.html" class="btn btn-primary">Hire Me</a>
+                <a href="pages/portfolio.html" class="btn btn-outline">View Portfolio</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <p class="section-subtitle fade-in">
+                Passionate about creating digital solutions that make a difference
+            </p>
+            <div class="about-grid">
+                <div class="about-image slide-in-left">
+                    <img src="assets/images/ahzam-profile.jpg" alt="Ahzam Maqsood" loading="lazy">
+                </div>
+                <div class="about-content slide-in-right">
+                    <h3>Hello! I'm Ahzam Maqsood</h3>
+                    <p>
+                        A passionate web developer and digital marketing specialist with expertise in creating 
+                        stunning digital experiences that drive results. I combine technical skills with 
+                        creative vision to deliver solutions that exceed expectations.
+                    </p>
+                    <p>
+                        With years of experience in the industry, I've helped numerous clients establish 
+                        their online presence and achieve their business goals through effective web 
+                        solutions and digital strategies.
+                    </p>
+                    
+                    <h3>My Expertise</h3>
+                    <div class="skills-grid">
+                        <div class="skill-badge">WordPress</div>
+                        <div class="skill-badge">Shopify</div>
+                        <div class="skill-badge">HTML/CSS</div>
+                        <div class="skill-badge">JavaScript</div>
+                        <div class="skill-badge">React</div>
+                        <div class="skill-badge">SEO</div>
+                        <div class="skill-badge">Social Media</div>
+                        <div class="skill-badge">Graphic Design</div>
+                        <div class="skill-badge">AI Tools</div>
+                        <div class="skill-badge">Content Creation</div>
+                        <div class="skill-badge">Ads Campaign</div>
+                        <div class="skill-badge">Analytics</div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="pages/about.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" style="background-color: var(--card-bg);">
+        <div class="container">
+            <h2 class="section-title fade-in">My Services</h2>
+            <p class="section-subtitle fade-in">
+                Comprehensive digital solutions to grow your business
+            </p>
+            <div class="services-grid">
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3 class="service-title">WordPress Development</h3>
+                    <p class="service-description">
+                        Custom WordPress websites with responsive design, SEO optimization, 
+                        and functionality tailored to your business needs.
+                    </p>
+                </div>
+                
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="service-title">Shopify Development</h3>
+                    <p class="service-description">
+                        Professional e-commerce solutions using Shopify to help you sell 
+                        products online effectively and increase revenue.
+                    </p>
+                </div>
+                
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3 class="service-title">Social Media Marketing</h3>
+                    <p class="service-description">
+                        Strategic SMM campaigns to increase your brand awareness, engagement, 
+                        and followers across all social platforms.
+                    </p>
+                </div>
+                
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3 class="service-title">Paid Ads Campaigns</h3>
+                    <p class="service-description">
+                        Targeted advertising on Facebook, Instagram, and Google to reach 
+                        your ideal customers and maximize ROI.
+                    </p>
+                </div>
+                
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="service-title">SEO Optimization</h3>
+                    <p class="service-description">
+                        Comprehensive SEO strategies to improve your website's visibility 
+                        and ranking in search engine results.
+                    </p>
+                </div>
+                
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">Graphic Design</h3>
+                    <p class="service-description">
+                        Creative graphic design solutions including logos, branding, 
+                        marketing materials, and visual content.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="pages/services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Preview Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Work</h2>
+            <p class="section-subtitle fade-in">
+                A showcase of my recent projects and achievements
+            </p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1674&q=80" alt="E-commerce Website" class="portfolio-image" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">E-commerce Store</h3>
+                        <p class="portfolio-desc">A fully functional online store with product listings and secure checkout.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Shopify</span>
+                            <span class="portfolio-tag">E-commerce</span>
+                            <span class="portfolio-tag">Responsive</span>
+                        </div>
+                        <a href="pages/portfolio.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1715&q=80" alt="Marketing Dashboard" class="portfolio-image" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Marketing Dashboard</h3>
+                        <p class="portfolio-desc">Analytics dashboard for tracking marketing campaign performance.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Analytics</span>
+                            <span class="portfolio-tag">Dashboard</span>
+                            <span class="portfolio-tag">React</span>
+                        </div>
+                        <a href="pages/portfolio.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" alt="Mobile App UI" class="portfolio-image" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Mobile App UI</h3>
+                        <p class="portfolio-desc">User interface design for a fitness tracking mobile application.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">UI/UX</span>
+                            <span class="portfolio-tag">Mobile</span>
+                            <span class="portfolio-tag">Design</span>
+                        </div>
+                        <a href="pages/portfolio.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="pages/portfolio.html" class="btn btn-primary">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" style="background: linear-gradient(135deg, var(--primary) 0%, #f4d03f 100%); color: var(--secondary);">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-target="150">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">Client Satisfaction %</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">Support Hours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="section-title fade-in">Ready to Start Your Project?</h2>
+            <p class="section-subtitle fade-in">
+                Let's work together to bring your ideas to life and create something amazing
+            </p>
+            <div class="hero-actions fade-in">
+                <a href="pages/contact.html" class="btn btn-primary">Get Started</a>
+                <a href="pages/portfolio.html" class="btn btn-outline">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ahzammaqsood</h3>
+                    <p>Turning ideas into digital reality with innovative web solutions and digital marketing strategies that drive results and grow businesses.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/ahzammaqsood1" class="footer-social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ahzammaqsood" class="footer-social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/ahzammaqsood" class="footer-social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ahzam-maqsood-31b97b266/" class="footer-social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="pages/services.html">Services</a></li>
+                        <li><a href="pages/portfolio.html">Portfolio</a></li>
+                        <li><a href="pages/projects.html">Projects</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="pages/services.html">WordPress Development</a></li>
+                        <li><a href="pages/services.html">Shopify Development</a></li>
+                        <li><a href="pages/services.html">Digital Marketing</a></li>
+                        <li><a href="pages/services.html">SEO Optimization</a></li>
+                        <li><a href="pages/services.html">Graphic Design</a></li>
+                        <li><a href="pages/services.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe to get updates on new projects and insights.</p>
+                    <div class="footer-newsletter">
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ahzam Maqsood | All Rights Reserved | Designed with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    
+    <!-- Additional CSS for stats section -->
+    <style>
+        .stats-section {
+            padding: 80px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        
+        .cta-section {
+            padding: 100px 0;
+            background: var(--card-bg);
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    
+    <!-- Counter Animation Script -->
+    <script>
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current);
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Trigger counter animation when stats section is visible
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
+

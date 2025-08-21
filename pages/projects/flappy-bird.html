@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird Game - Ahzam Maqsood</title>
+    <meta name="description" content="Interactive Flappy Bird game built with HTML5, CSS3, and JavaScript">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/sections.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="../../index.html" class="logo">ahzammaqsood</a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="../projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="../../assets/Ahzam-Maqsood-CV.pdf" class="btn btn-outline hidden-mobile" download>Download CV</a>
+                <a href="../contact.html" class="btn btn-primary hire-btn">Hire Me</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-menu">
+            <li class="mobile-nav-item"><a href="../../index.html" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="../about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="../services.html" class="mobile-nav-link">Services</a></li>
+            <li class="mobile-nav-item"><a href="../portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+            <li class="mobile-nav-item"><a href="../projects.html" class="mobile-nav-link">Projects</a></li>
+            <li class="mobile-nav-item"><a href="../contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        
+        <div class="mobile-nav-actions">
+            <a href="../../assets/Ahzam-Maqsood-CV.pdf" class="btn btn-outline" download>Download CV</a>
+            <a href="../contact.html" class="btn btn-primary">Hire Me</a>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="../portfolio.html">Portfolio</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Flappy Bird Game</span>
+            </div>
+            <h1 class="project-title fade-in">Flappy Bird Game</h1>
+            <p class="project-subtitle fade-in">Interactive HTML5 game with smooth animations and responsive controls</p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Completed: January 2025</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-code"></i>
+                    <span>HTML5, CSS3, JavaScript</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Game Development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section class="game-showcase">
+        <div class="container">
+            <div class="game-container">
+                <div class="game-info">
+                    <h2>Play the Game</h2>
+                    <p>Use the spacebar or click/tap to make the bird fly. Avoid the pipes and try to get the highest score!</p>
+                    
+                    <div class="game-controls">
+                        <div class="control-item">
+                            <i class="fas fa-mouse-pointer"></i>
+                            <span>Click to Jump</span>
+                        </div>
+                        <div class="control-item">
+                            <i class="fas fa-keyboard"></i>
+                            <span>Spacebar to Jump</span>
+                        </div>
+                        <div class="control-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Tap to Jump (Mobile)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="game-stats">
+                        <div class="stat">
+                            <span class="stat-label">Current Score:</span>
+                            <span class="stat-value" id="currentScore">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Best Score:</span>
+                            <span class="stat-value" id="bestScore">0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-wrapper">
+                    <canvas id="flappyBirdGame" width="400" height="600"></canvas>
+                    <div class="game-overlay" id="gameOverlay">
+                        <div class="game-start">
+                            <h3>Flappy Bird</h3>
+                            <p>Click or press spacebar to start</p>
+                            <button class="btn btn-primary" id="startButton">Start Game</button>
+                        </div>
+                    </div>
+                    <div class="game-over-screen" id="gameOverScreen" style="display: none;">
+                        <div class="game-over-content">
+                            <h3>Game Over!</h3>
+                            <p>Score: <span id="finalScore">0</span></p>
+                            <p>Best: <span id="finalBestScore">0</span></p>
+                            <button class="btn btn-primary" id="restartButton">Play Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details" style="background-color: var(--card-bg);">
+        <div class="container">
+            <div class="details-grid">
+                <div class="detail-section">
+                    <h3>Project Overview</h3>
+                    <p>This Flappy Bird game is a recreation of the popular mobile game built using HTML5 Canvas, CSS3, and vanilla JavaScript. The game features smooth animations, collision detection, and responsive controls that work on both desktop and mobile devices.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Smooth 60fps gameplay</li>
+                        <li>Responsive controls (click, spacebar, touch)</li>
+                        <li>Score tracking and local storage</li>
+                        <li>Mobile-friendly design</li>
+                        <li>Collision detection system</li>
+                        <li>Animated sprites and backgrounds</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Technical Implementation</h3>
+                    <p>The game uses HTML5 Canvas for rendering and JavaScript for game logic. The animation loop runs at 60fps using requestAnimationFrame for smooth gameplay.</p>
+                    
+                    <h4>Technologies Used:</h4>
+                    <ul>
+                        <li><strong>HTML5 Canvas:</strong> For game rendering</li>
+                        <li><strong>JavaScript:</strong> Game logic and physics</li>
+                        <li><strong>CSS3:</strong> Styling and responsive design</li>
+                        <li><strong>Local Storage:</strong> Score persistence</li>
+                    </ul>
+                    
+                    <h4>Game Mechanics:</h4>
+                    <ul>
+                        <li>Gravity and jump physics</li>
+                        <li>Pipe generation and movement</li>
+                        <li>Collision detection algorithms</li>
+                        <li>Score calculation system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Portfolio -->
+    <section class="back-to-portfolio">
+        <div class="container text-center">
+            <h2>Explore More Projects</h2>
+            <p>Check out my other work and see what I can create for you</p>
+            <div class="hero-actions">
+                <a href="../portfolio.html" class="btn btn-primary">View Portfolio</a>
+                <a href="../contact.html" class="btn btn-outline">Hire Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ahzammaqsood</h3>
+                    <p>Turning ideas into digital reality with innovative web solutions and digital marketing strategies that drive results and grow businesses.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/ahzammaqsood1" class="footer-social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ahzammaqsood" class="footer-social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/ahzammaqsood" class="footer-social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ahzam-maqsood-31b97b266/" class="footer-social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../portfolio.html">Portfolio</a></li>
+                        <li><a href="../projects.html">Projects</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">WordPress Development</a></li>
+                        <li><a href="../services.html">Shopify Development</a></li>
+                        <li><a href="../services.html">Digital Marketing</a></li>
+                        <li><a href="../services.html">SEO Optimization</a></li>
+                        <li><a href="../services.html">Graphic Design</a></li>
+                        <li><a href="../services.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe to get updates on new projects and insights.</p>
+                    <div class="footer-newsletter">
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ahzam Maqsood | All Rights Reserved | Designed with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="../../js/main.js"></script>
+    
+    <!-- Flappy Bird Game Script -->
+    <script>
+        class FlappyBirdGame {
+            constructor() {
+                this.canvas = document.getElementById('flappyBirdGame');
+                this.ctx = this.canvas.getContext('2d');
+                this.gameStarted = false;
+                this.gameOver = false;
+                this.score = 0;
+                this.bestScore = localStorage.getItem('flappyBirdBest') || 0;
+                
+                // Game objects
+                this.bird = {
+                    x: 80,
+                    y: 250,
+                    width: 34,
+                    height: 24,
+                    velocity: 0,
+                    gravity: 0.4,
+                    jumpPower: -8
+                };
+                
+                this.pipes = [];
+                this.pipeWidth = 52;
+                this.pipeGap = 120;
+                this.pipeSpeed = 2;
+                
+                this.background = {
+                    x: 0,
+                    speed: 1
+                };
+                
+                this.init();
+            }
+            
+            init() {
+                this.updateScoreDisplay();
+                this.setupEventListeners();
+                this.gameLoop();
+            }
+            
+            setupEventListeners() {
+                // Click events
+                this.canvas.addEventListener('click', () => this.handleInput());
+                document.getElementById('startButton').addEventListener('click', () => this.startGame());
+                document.getElementById('restartButton').addEventListener('click', () => this.restartGame());
+                
+                // Keyboard events
+                document.addEventListener('keydown', (e) => {
+                    if (e.code === 'Space') {
+                        e.preventDefault();
+                        this.handleInput();
+                    }
+                });
+                
+                // Touch events for mobile
+                this.canvas.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    this.handleInput();
+                });
+            }
+            
+            handleInput() {
+                if (!this.gameStarted) {
+                    this.startGame();
+                } else if (!this.gameOver) {
+                    this.bird.velocity = this.bird.jumpPower;
+                }
+            }
+            
+            startGame() {
+                this.gameStarted = true;
+                this.gameOver = false;
+                this.score = 0;
+                this.bird.y = 250;
+                this.bird.velocity = 0;
+                this.pipes = [];
+                document.getElementById('gameOverlay').style.display = 'none';
+                document.getElementById('gameOverScreen').style.display = 'none';
+                this.updateScoreDisplay();
+            }
+            
+            restartGame() {
+                this.startGame();
+            }
+            
+            update() {
+                if (!this.gameStarted || this.gameOver) return;
+                
+                // Update bird
+                this.bird.velocity += this.bird.gravity;
+                this.bird.y += this.bird.velocity;
+                
+                // Update background
+                this.background.x -= this.background.speed;
+                if (this.background.x <= -this.canvas.width) {
+                    this.background.x = 0;
+                }
+                
+                // Generate pipes
+                if (this.pipes.length === 0 || this.pipes[this.pipes.length - 1].x < this.canvas.width - 200) {
+                    this.generatePipe();
+                }
+                
+                // Update pipes
+                for (let i = this.pipes.length - 1; i >= 0; i--) {
+                    this.pipes[i].x -= this.pipeSpeed;
+                    
+                    // Remove off-screen pipes
+                    if (this.pipes[i].x + this.pipeWidth < 0) {
+                        this.pipes.splice(i, 1);
+                        this.score++;
+                        this.updateScoreDisplay();
+                    }
+                }
+                
+                // Check collisions
+                this.checkCollisions();
+            }
+            
+            generatePipe() {
+                const minHeight = 50;
+                const maxHeight = this.canvas.height - this.pipeGap - minHeight;
+                const topHeight = Math.random() * (maxHeight - minHeight) + minHeight;
+                
+                this.pipes.push({
+                    x: this.canvas.width,
+                    topHeight: topHeight,
+                    bottomY: topHeight + this.pipeGap
+                });
+            }
+            
+            checkCollisions() {
+                // Ground and ceiling collision
+                if (this.bird.y + this.bird.height >= this.canvas.height || this.bird.y <= 0) {
+                    this.endGame();
+                    return;
+                }
+                
+                // Pipe collision
+                for (let pipe of this.pipes) {
+                    if (this.bird.x < pipe.x + this.pipeWidth &&
+                        this.bird.x + this.bird.width > pipe.x) {
+                        
+                        if (this.bird.y < pipe.topHeight ||
+                            this.bird.y + this.bird.height > pipe.bottomY) {
+                            this.endGame();
+                            return;
+                        }
+                    }
+                }
+            }
+            
+            endGame() {
+                this.gameOver = true;
+                
+                // Update best score
+                if (this.score > this.bestScore) {
+                    this.bestScore = this.score;
+                    localStorage.setItem('flappyBirdBest', this.bestScore);
+                }
+                
+                // Show game over screen
+                document.getElementById('finalScore').textContent = this.score;
+                document.getElementById('finalBestScore').textContent = this.bestScore;
+                document.getElementById('gameOverScreen').style.display = 'flex';
+                this.updateScoreDisplay();
+            }
+            
+            draw() {
+                // Clear canvas
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                // Draw background
+                this.drawBackground();
+                
+                if (this.gameStarted) {
+                    // Draw pipes
+                    this.drawPipes();
+                    
+                    // Draw bird
+                    this.drawBird();
+                }
+            }
+            
+            drawBackground() {
+                // Sky gradient
+                const gradient = this.ctx.createLinearGradient(0, 0, 0, this.canvas.height);
+                gradient.addColorStop(0, '#87CEEB');
+                gradient.addColorStop(1, '#98FB98');
+                this.ctx.fillStyle = gradient;
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                // Ground
+                this.ctx.fillStyle = '#DEB887';
+                this.ctx.fillRect(0, this.canvas.height - 50, this.canvas.width, 50);
+            }
+            
+            drawBird() {
+                this.ctx.fillStyle = '#FFD700';
+                this.ctx.fillRect(this.bird.x, this.bird.y, this.bird.width, this.bird.height);
+                
+                // Bird details
+                this.ctx.fillStyle = '#FF6347';
+                this.ctx.fillRect(this.bird.x + 25, this.bird.y + 8, 8, 4); // Beak
+                
+                this.ctx.fillStyle = '#000';
+                this.ctx.fillRect(this.bird.x + 8, this.bird.y + 6, 4, 4); // Eye
+            }
+            
+            drawPipes() {
+                this.ctx.fillStyle = '#228B22';
+                
+                for (let pipe of this.pipes) {
+                    // Top pipe
+                    this.ctx.fillRect(pipe.x, 0, this.pipeWidth, pipe.topHeight);
+                    
+                    // Bottom pipe
+                    this.ctx.fillRect(pipe.x, pipe.bottomY, this.pipeWidth, this.canvas.height - pipe.bottomY);
+                    
+                    // Pipe caps
+                    this.ctx.fillStyle = '#32CD32';
+                    this.ctx.fillRect(pipe.x - 4, pipe.topHeight - 20, this.pipeWidth + 8, 20);
+                    this.ctx.fillRect(pipe.x - 4, pipe.bottomY, this.pipeWidth + 8, 20);
+                    this.ctx.fillStyle = '#228B22';
+                }
+            }
+            
+            updateScoreDisplay() {
+                document.getElementById('currentScore').textContent = this.score;
+                document.getElementById('bestScore').textContent = this.bestScore;
+            }
+            
+            gameLoop() {
+                this.update();
+                this.draw();
+                requestAnimationFrame(() => this.gameLoop());
+            }
+        }
+        
+        // Initialize game when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new FlappyBirdGame();
+        });
+    </script>
+    
+    <!-- Additional CSS for Game Page -->
+    <style>
+        .project-header {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, #f4d03f 100%);
+            color: white;
+        }
+        
+        .project-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .project-breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        
+        .project-breadcrumb a:hover {
+            opacity: 1;
+        }
+        
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .game-showcase {
+            padding: 80px 0;
+        }
+        
+        .game-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .game-info h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .game-info p {
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        
+        .game-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .control-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--card-bg);
+            border-radius: 8px;
+        }
+        
+        .control-item i {
+            color: var(--primary);
+            width: 20px;
+        }
+        
+        .game-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .game-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #flappyBirdGame {
+            border: 3px solid var(--primary);
+            border-radius: 15px;
+            background: #87CEEB;
+            box-shadow: var(--shadow-medium);
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .game-overlay,
+        .game-over-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+        }
+        
+        .game-start,
+        .game-over-content {
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+        
+        .game-start h3,
+        .game-over-content h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .game-start p,
+        .game-over-content p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .project-details {
+            padding: 80px 0;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .detail-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .detail-section h4 {
+            font-size: 1.2rem;
+            margin: 25px 0 15px;
+            color: var(--primary);
+        }
+        
+        .detail-section p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .detail-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .detail-section li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--background);
+            color: var(--text);
+        }
+        
+        .detail-section li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .back-to-portfolio {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+        
+        .back-to-portfolio h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .back-to-portfolio p {
+            margin-bottom: 30px;
+            color: var(--text);
+        }
+        
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .game-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .game-stats {
+                justify-content: center;
+            }
+            
+            #flappyBirdGame {
+                width: 100%;
+                max-width: 350px;
+                height: 500px;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .game-controls {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .control-item {
+                flex: 1;
+                min-width: 120px;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</body>
+</html>
+

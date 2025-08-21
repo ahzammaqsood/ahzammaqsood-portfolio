@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ahzam Maqsood | Creative Digital Solutions</title>
+    <meta name="description" content="Explore the creative portfolio of Ahzam Maqsood - Web development, design, and digital marketing projects">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/sections.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">ahzammaqsood</a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="../assets/Ahzam-Maqsood-CV.pdf" class="btn btn-outline hidden-mobile" download>Download CV</a>
+                <a href="contact.html" class="btn btn-primary hire-btn">Hire Me</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <ul class="mobile-nav-menu">
+            <li class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></li>
+            <li class="mobile-nav-item"><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+            <li class="mobile-nav-item"><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+            <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        
+        <div class="mobile-nav-actions">
+            <a href="../assets/Ahzam-Maqsood-CV.pdf" class="btn btn-outline" download>Download CV</a>
+            <a href="contact.html" class="btn btn-primary">Hire Me</a>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title fade-in">My Portfolio</h1>
+            <p class="page-subtitle fade-in">A showcase of creative digital solutions and successful projects</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <section class="portfolio-filter">
+        <div class="container">
+            <div class="filter-buttons fade-in">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="web-development">Web Development</button>
+                <button class="filter-btn" data-filter="e-commerce">E-commerce</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="tools">Tools & Apps</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-grid">
+                <!-- Karachi Delights Restaurant -->
+                <div class="portfolio-item fade-in" data-category="web-development">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Karachi Delights Restaurant" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Karachi Delights Restaurant</h3>
+                                <p>Complete restaurant website with online ordering system and reservation management</p>
+                                <div class="portfolio-links">
+                                    <a href="projects/restaurant.html" class="portfolio-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Karachi Delights Restaurant</h3>
+                        <p>WordPress • E-commerce • Responsive Design</p>
+                        <div class="portfolio-stats">
+                            <span>180% Sales Increase</span>
+                            <span>95% Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fashion Hub Store -->
+                <div class="portfolio-item fade-in" data-category="e-commerce">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fashion Hub Store" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Fashion Hub Store</h3>
+                                <p>Modern Shopify e-commerce platform with advanced filtering and wishlist functionality</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Fashion Hub Store</h3>
+                        <p>Shopify • Fashion • Mobile-First</p>
+                        <div class="portfolio-stats">
+                            <span>220% Conversion Boost</span>
+                            <span>$50K Monthly Revenue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Startup Campaign -->
+                <div class="portfolio-item fade-in" data-category="marketing">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tech Startup Campaign" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Tech Startup Growth Campaign</h3>
+                                <p>Comprehensive digital marketing strategy with multi-channel approach</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Tech Startup Growth Campaign</h3>
+                        <p>Facebook Ads • Google Ads • SEO</p>
+                        <div class="portfolio-stats">
+                            <span>500+ Qualified Leads</span>
+                            <span>3.2x ROAS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Website -->
+                <div class="portfolio-item fade-in" data-category="web-development">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68e2c6b7d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Corporate Solutions" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Corporate Solutions Website</h3>
+                                <p>Professional corporate website with custom CMS and SEO optimization</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Corporate Solutions Website</h3>
+                        <p>WordPress • Corporate • CMS</p>
+                        <div class="portfolio-stats">
+                            <span>150% Traffic Increase</span>
+                            <span>85% Page Speed Score</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand Identity -->
+                <div class="portfolio-item fade-in" data-category="design">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Brand Identity" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Complete Brand Identity</h3>
+                                <p>Logo design, color palette, typography, and comprehensive brand guidelines</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Complete Brand Identity</h3>
+                        <p>Logo Design • Branding • Guidelines</p>
+                        <div class="portfolio-stats">
+                            <span>200% Brand Recognition</span>
+                            <span>100% Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fitness App UI -->
+                <div class="portfolio-item fade-in" data-category="design">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fitness App UI" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Fitness Tracker App UI</h3>
+                                <p>Modern mobile app interface design with focus on user experience</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Fitness Tracker App UI</h3>
+                        <p>UI/UX • Mobile • Fitness</p>
+                        <div class="portfolio-stats">
+                            <span>160% User Engagement</span>
+                            <span>4.8/5 User Rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flappy Bird Game -->
+                <div class="portfolio-item fade-in" data-category="tools">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Flappy Bird Game" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Flappy Bird Game</h3>
+                                <p>Interactive HTML5 game with smooth animations and responsive controls</p>
+                                <div class="portfolio-links">
+                                    <a href="projects/flappy-bird.html" class="portfolio-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Flappy Bird Game</h3>
+                        <p>HTML5 • JavaScript • Game Development</p>
+                        <div class="portfolio-stats">
+                            <span>Interactive Gaming</span>
+                            <span>Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PNG to PDF Converter -->
+                <div class="portfolio-item fade-in" data-category="tools">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="PNG to PDF Converter" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>PNG to PDF Converter</h3>
+                                <p>Web-based tool for converting PNG images to PDF format with batch processing</p>
+                                <div class="portfolio-links">
+                                    <a href="projects/png-to-pdf.html" class="portfolio-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>PNG to PDF Converter</h3>
+                        <p>Web Tool • File Conversion • Utility</p>
+                        <div class="portfolio-stats">
+                            <span>Batch Processing</span>
+                            <span>User-Friendly Interface</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-learning Platform -->
+                <div class="portfolio-item fade-in" data-category="web-development">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="E-learning Platform" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>E-learning Platform</h3>
+                                <p>Comprehensive online learning management system with course creation tools</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-link">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>E-learning Platform</h3>
+                        <p>WordPress • LMS • Education</p>
+                        <div class="portfolio-stats">
+                            <span>1000+ Students</span>
+                            <span>95% Completion Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Technologies -->
+    <section class="skills-tech-section" style="background-color: var(--card-bg);">
+        <div class="container">
+            <h2 class="section-title fade-in">Technologies I Use</h2>
+            <p class="section-subtitle fade-in">Modern tools and technologies for cutting-edge solutions</p>
+            
+            <div class="tech-categories">
+                <div class="tech-category fade-in">
+                    <h3>Frontend Development</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-bootstrap"></i>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category fade-in">
+                    <h3>CMS & E-commerce</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fab fa-wordpress"></i>
+                            <span>WordPress</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-shopify"></i>
+                            <span>Shopify</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>WooCommerce</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category fade-in">
+                    <h3>Design & Marketing</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-palette"></i>
+                            <span>Photoshop</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-google"></i>
+                            <span>Google Ads</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook Ads</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Stats -->
+    <section class="portfolio-stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>150+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>120+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>5000+</h3>
+                        <p>Hours of Work</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>98%</h3>
+                        <p>Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="section-title fade-in">Let's Create Something Amazing</h2>
+            <p class="section-subtitle fade-in">
+                Ready to bring your ideas to life? Let's discuss your next project
+            </p>
+            <div class="hero-actions fade-in">
+                <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+                <a href="projects.html" class="btn btn-outline">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ahzammaqsood</h3>
+                    <p>Turning ideas into digital reality with innovative web solutions and digital marketing strategies that drive results and grow businesses.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/ahzammaqsood1" class="footer-social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ahzammaqsood" class="footer-social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/ahzammaqsood" class="footer-social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ahzam-maqsood-31b97b266/" class="footer-social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">WordPress Development</a></li>
+                        <li><a href="services.html">Shopify Development</a></li>
+                        <li><a href="services.html">Digital Marketing</a></li>
+                        <li><a href="services.html">SEO Optimization</a></li>
+                        <li><a href="services.html">Graphic Design</a></li>
+                        <li><a href="services.html">Content Creation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe to get updates on new projects and insights.</p>
+                    <div class="footer-newsletter">
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ahzam Maqsood | All Rights Reserved | Designed with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="../js/main.js"></script>
+    
+    <!-- Additional CSS for Portfolio Page -->
+    <style>
+        .portfolio-filter {
+            padding: 40px 0;
+            background-color: var(--card-bg);
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .portfolio-section {
+            padding: 80px 0;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .portfolio-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(212,175,55,0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-info {
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+        
+        .portfolio-info h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .portfolio-info p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .portfolio-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .portfolio-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .portfolio-link:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+        
+        .portfolio-content {
+            padding: 25px;
+        }
+        
+        .portfolio-content h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .portfolio-content p {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-stats {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .portfolio-stats span {
+            background: var(--background);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--text);
+            border: 1px solid var(--primary);
+        }
+        
+        .skills-tech-section {
+            padding: 80px 0;
+        }
+        
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .tech-category {
+            background: var(--background);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+        
+        .tech-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .tech-category h3 {
+            margin-bottom: 25px;
+            color: var(--secondary);
+            text-align: center;
+            font-size: 1.3rem;
+        }
+        
+        .tech-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+        }
+        
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-3px);
+            background: var(--primary);
+            color: var(--secondary);
+        }
+        
+        .tech-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .tech-item:hover i {
+            color: var(--secondary);
+        }
+        
+        .tech-item span {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .portfolio-stats-section {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-card {
+            background: var(--background);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .stat-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), #f4d03f);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .stat-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .stat-content h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-content p {
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .portfolio-item {
+                margin: 0 10px;
+            }
+            
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            
+            .tech-categories {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .tech-items {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .stat-card {
+                padding: 30px 20px;
+            }
+            
+            .stat-content h3 {
+                font-size: 2rem;
+            }
+            
+            .portfolio-stats span {
+                font-size: 0.75rem;
+                padding: 4px 10px;
+            }
+        }
+    </style>
+    
+    <!-- Portfolio Filter Script -->
+    <script>
+        // Portfolio filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
