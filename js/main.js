@@ -355,8 +355,8 @@ window.addEventListener('scroll', optimizedScrollHandler);
 // Preload images
 function preloadImages() {
     const images = [
-        '../assets/images/hero-bg.jpg',
-        '../assets/images/about-image.jpg',
+        'assets/images/hero-bg',
+        'assets/images/about-image',
         // Add more image paths as needed
     ];
     
