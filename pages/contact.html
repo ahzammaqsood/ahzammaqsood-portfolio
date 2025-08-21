@@ -439,6 +439,9 @@
     <!-- JavaScript Files -->
     <script src="../js/main.js"></script>
     
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    
     <!-- Additional CSS for Contact Page -->
     <style>
         .contact-section {
@@ -804,8 +807,14 @@
     
     <!-- Contact Form and FAQ Scripts -->
     <script>
-        // Contact form handling with AJAX
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        // EmailJS initialization
+        (function() {
+            // Replace 'YOUR_USER_ID' with your actual EmailJS user ID
+            emailjs.init("ca_Fs76WUrS4eVr8D");
+        })();
+
+        // Contact form handling with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const submitBtn = document.getElementById('submitBtn');
@@ -813,83 +822,60 @@
             const btnLoading = submitBtn.querySelector('.btn-loading');
             const formMessage = document.getElementById('formMessage');
             
-            // Get form data
-            const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject') || 'Portfolio Contact',
-                message: formData.get('message'),
-                service: formData.get('service'),
-                budget: formData.get('budget'),
-                timeline: formData.get('timeline')
-            };
-            
             // Show loading state
             submitBtn.disabled = true;
             btnText.style.display = 'none';
             btnLoading.style.display = 'inline-flex';
             formMessage.style.display = 'none';
             
-            try {
-                // Send data to Flask backend
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                // Check if response is ok
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                // Check if response has content
-                const responseText = await response.text();
-                if (!responseText) {
-                    throw new Error('Empty response from server');
-                }
-                
-                const result = JSON.parse(responseText);
-                
-                // Show message
-                const messageIcon = formMessage.querySelector('.message-icon');
-                const messageText = formMessage.querySelector('.message-text');
-                
-                if (result.success) {
+            // Get form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                service: document.getElementById('service').value,
+                budget: document.getElementById('budget').value,
+                timeline: document.getElementById('timeline').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Send email using EmailJS
+            // Replace 'SERVICE_ID' and 'TEMPLATE_ID' with your actual IDs
+            emailjs.send('service_contact', 'template_gzn6138', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    const messageIcon = formMessage.querySelector('.message-icon');
+                    const messageText = formMessage.querySelector('.message-text');
+                    
                     formMessage.className = 'form-message success';
                     messageIcon.className = 'message-icon fas fa-check-circle';
-                    messageText.textContent = result.message;
+                    messageText.textContent = 'Your message has been sent successfully! I will get back to you within 24 hours.';
+                    formMessage.style.display = 'block';
                     
                     // Reset form on success
-                    this.reset();
-                } else {
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    const messageIcon = formMessage.querySelector('.message-icon');
+                    const messageText = formMessage.querySelector('.message-text');
+                    
                     formMessage.className = 'form-message error';
                     messageIcon.className = 'message-icon fas fa-exclamation-circle';
-                    messageText.textContent = result.message;
-                }
-                
-                formMessage.style.display = 'block';
-                
-            } catch (error) {
-                console.error('Error sending message:', error);
-                
-                // Show error message
-                const messageIcon = formMessage.querySelector('.message-icon');
-                const messageText = formMessage.querySelector('.message-text');
-                
-                formMessage.className = 'form-message error';
-                messageIcon.className = 'message-icon fas fa-exclamation-circle';
-                messageText.textContent = 'Sorry, there was an error sending your message. Please try again later.';
-                formMessage.style.display = 'block';
-            }
-            
-            // Reset button state
-            submitBtn.disabled = false;
-            btnText.style.display = 'inline';
-            btnLoading.style.display = 'none';
+                    messageText.textContent = 'Sorry, there was an error sending your message. Please try again later or contact me directly at ahzammaqsood1@gmail.com';
+                    formMessage.style.display = 'block';
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                });
         });
         
         // FAQ accordion functionality
@@ -915,4 +901,3 @@
     </script>
 </body>
 </html>
-
