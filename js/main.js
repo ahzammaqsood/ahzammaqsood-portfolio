@@ -357,7 +357,6 @@ function preloadImages() {
     const images = [
         '/ahzammaqsood-portfolio/assets/images/hero-bg.jpg',
         '/ahzammaqsood-portfolio/assets/images/about-image.jpg',
-        // Add more image paths as needed
     ];
     
     images.forEach(src => {
